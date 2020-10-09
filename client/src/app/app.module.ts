@@ -10,12 +10,15 @@ import { FormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
 import { JwtInterceptor } from './_interceptors/jwt.interceptor';
 import { ListsComponent } from './lists/lists.component';
+import { LoadingInterceptor } from './_interceptors/loading.interceptor';
 import { MemberCardComponent } from './members/member-card/member-card.component';
 import { MemberDetailComponent } from './members/member-detail/member-detail.component';
+import { MemberEditComponent } from './members/member-edit/member-edit.component';
 import { MemberListComponent } from './members/member-list/member-list.component';
 import { MessagesComponent } from './messages/messages.component';
 import { NavComponent } from './nav/nav.component';
 import { NgModule } from '@angular/core';
+import { NgxSpinnerModule } from 'ngx-spinner'; // moved to shared
 import { NotFoundComponent } from './errors/not-found/not-found.component';
 import { RegisterComponent } from './register/register.component';
 import { ServerErrorComponent } from './errors/server-error/server-error.component';
@@ -37,6 +40,7 @@ import { ToastrModule } from 'ngx-toastr';
     NotFoundComponent,
     ServerErrorComponent,
     MemberCardComponent,
+    MemberEditComponent,
   ],
   imports: [
     BrowserModule,
@@ -45,10 +49,12 @@ import { ToastrModule } from 'ngx-toastr';
     BrowserAnimationsModule,
     FormsModule,
     SharedModule,
+    NgxSpinnerModule,  // moved to shared
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true }
   ],
   bootstrap: [AppComponent],
 })
