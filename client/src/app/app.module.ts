@@ -25,6 +25,7 @@ import { ServerErrorComponent } from './errors/server-error/server-error.compone
 import { SharedModule } from './_modules/shared.module';
 import { TestErrorsComponent } from './errors/test-errors/test-errors.component';
 import { ToastrModule } from 'ngx-toastr';
+import { PhotoEditorComponent } from './members/photo-editor/photo-editor.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { ToastrModule } from 'ngx-toastr';
     ServerErrorComponent,
     MemberCardComponent,
     MemberEditComponent,
+    PhotoEditorComponent,
   ],
   imports: [
     BrowserModule,
