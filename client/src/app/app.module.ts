@@ -1,12 +1,11 @@
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
-import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { ErrorInterceptor } from './_interceptors/error.interceptor';
-import { FormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
 import { JwtInterceptor } from './_interceptors/jwt.interceptor';
 import { ListsComponent } from './lists/lists.component';
@@ -20,12 +19,13 @@ import { NavComponent } from './nav/nav.component';
 import { NgModule } from '@angular/core';
 import { NgxSpinnerModule } from 'ngx-spinner'; // moved to shared
 import { NotFoundComponent } from './errors/not-found/not-found.component';
+import { PhotoEditorComponent } from './members/photo-editor/photo-editor.component';
 import { RegisterComponent } from './register/register.component';
 import { ServerErrorComponent } from './errors/server-error/server-error.component';
 import { SharedModule } from './_modules/shared.module';
 import { TestErrorsComponent } from './errors/test-errors/test-errors.component';
-import { ToastrModule } from 'ngx-toastr';
-import { PhotoEditorComponent } from './members/photo-editor/photo-editor.component';
+import { TextInputComponent } from './_forms/text-input/text-input.component';
+import { DateInputComponent } from './_forms/date-input/date-input.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +43,8 @@ import { PhotoEditorComponent } from './members/photo-editor/photo-editor.compon
     MemberCardComponent,
     MemberEditComponent,
     PhotoEditorComponent,
+    TextInputComponent,
+    DateInputComponent,
   ],
   imports: [
     BrowserModule,
@@ -50,6 +52,7 @@ import { PhotoEditorComponent } from './members/photo-editor/photo-editor.compon
     HttpClientModule,
     BrowserAnimationsModule,
     FormsModule,
+    ReactiveFormsModule,    
     SharedModule,
     NgxSpinnerModule,  // moved to shared
   ],
