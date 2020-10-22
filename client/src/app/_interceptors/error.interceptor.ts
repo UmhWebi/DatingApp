@@ -14,7 +14,7 @@ import { catchError } from 'rxjs/operators';
 @Injectable()
 export class ErrorInterceptor implements HttpInterceptor {
 
-  constructor(private router: Router, private toatr: ToastrService ) {}
+  constructor(private router: Router, private toastr: ToastrService ) {}
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
     return next.handle(request).pipe(
@@ -30,13 +30,15 @@ export class ErrorInterceptor implements HttpInterceptor {
                   }
                 }
                 throw modalStateErrors.flat();
+              } else if (typeof(err.error) === 'object') {
+                this.toastr.error(err.statusText, err.status);
               } else {
-                this.toatr.error(err.statusText, err.status);
+                this.toastr.error(err.error, err.status);
               }
               break;
             case 401:
               console.log(err);
-              this.toatr.error(err.statusText, err.status);
+              this.toastr.error(err.statusText, err.status);
               break;
             case 404:
               this.router.navigateByUrl('/not-found');
@@ -46,7 +48,7 @@ export class ErrorInterceptor implements HttpInterceptor {
               this.router.navigateByUrl('/server-error', navigationExtras);
               break;
             default:
-              this.toatr.error('Something unexpected went wrong');
+              this.toastr.error('Something unexpected went wrong');
               console.log(err);
               break;
           }
