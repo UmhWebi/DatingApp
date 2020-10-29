@@ -3,6 +3,7 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { ButtonsModule } from 'ngx-bootstrap/buttons';
 import { CommonModule } from '@angular/common';
 import { FileUploadModule } from 'ng2-file-upload';
+import { ModalModule } from 'ngx-bootstrap/modal';
 import { NgModule } from '@angular/core';
 import { NgxGalleryModule } from '@kolkov/ngx-gallery';
 import { PaginationModule } from 'ngx-bootstrap/pagination';
@@ -24,7 +25,8 @@ import { ToastrModule } from 'ngx-toastr';
     BsDatepickerModule.forRoot(),
     PaginationModule.forRoot(),
     ButtonsModule.forRoot(),
-    TimeagoModule.forRoot()
+    TimeagoModule.forRoot(),
+    ModalModule.forChild()
   ],
   exports: [
     BsDropdownModule,
@@ -35,8 +37,8 @@ import { ToastrModule } from 'ngx-toastr';
     BsDatepickerModule,
     PaginationModule,
     ButtonsModule,
-    TimeagoModule
-
+    TimeagoModule,
+    ModalModule
   ]
 })  
 export class SharedModule { }
