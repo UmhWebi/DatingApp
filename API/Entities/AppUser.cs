@@ -9,5 +9,7 @@ namespace API.Entities
     {
         public int Id { get; set; }  // Must use Id
         public string UserName { get; set; }  // Must use UserName (case sensitive)
+        public byte[] PasswordHash { get; set; }
+        public byte[] PasswordSalt { get; set; }
     }
 }
