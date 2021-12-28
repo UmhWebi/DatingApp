@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-
 import { HttpClient } from '@angular/common/http';
 
 @Component({
@@ -8,7 +7,6 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./test-errors.component.css']
 })
 export class TestErrorsComponent implements OnInit {
-
   baseUrl = 'https://localhost:5001/api/';
   validationErrors: string[] = [];
 
@@ -49,13 +47,12 @@ export class TestErrorsComponent implements OnInit {
     })
   }
 
-  get400Validation() {
+  get400ValidationError() {
     this.http.post(this.baseUrl + 'account/register', {}).subscribe(response => {
       console.log(response);
     }, error => {
       console.log(error);
       this.validationErrors = error;
-
     })
   }
 

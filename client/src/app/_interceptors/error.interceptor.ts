@@ -1,13 +1,12 @@
-import {
-  HttpEvent,
-  HttpHandler,
-  HttpInterceptor,
-  HttpRequest
-} from '@angular/common/http';
-import { NavigationExtras, Router } from '@angular/router';
-import { Observable, throwError } from 'rxjs';
-
 import { Injectable } from '@angular/core';
+import {
+  HttpRequest,
+  HttpHandler,
+  HttpEvent,
+  HttpInterceptor
+} from '@angular/common/http';
+import { Observable, throwError } from 'rxjs';
+import { Router, NavigationExtras } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { catchError } from 'rxjs/operators';
 
