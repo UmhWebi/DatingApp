@@ -1,14 +1,15 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
-import { ToastrModule } from 'ngx-toastr';
-import { TabsModule } from 'ngx-bootstrap/tabs';
-import {NgxGalleryModule} from '@kolkov/ngx-gallery';
-import {FileUploadModule} from 'ng2-file-upload';
 import {BsDatepickerModule} from 'ngx-bootstrap/datepicker';
-import { PaginationModule } from 'ngx-bootstrap/pagination';
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { ButtonsModule } from 'ngx-bootstrap/buttons';
+import { CommonModule } from '@angular/common';
+import {FileUploadModule} from 'ng2-file-upload';
+import { ModalModule } from 'ngx-bootstrap/modal';
+import { NgModule } from '@angular/core';
+import {NgxGalleryModule} from '@kolkov/ngx-gallery';
+import { PaginationModule } from 'ngx-bootstrap/pagination';
+import { TabsModule } from 'ngx-bootstrap/tabs';
 import { TimeagoModule } from 'ngx-timeago';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [],
@@ -24,7 +25,8 @@ import { TimeagoModule } from 'ngx-timeago';
     BsDatepickerModule.forRoot(),
     PaginationModule.forRoot(),
     ButtonsModule.forRoot(),
-    TimeagoModule.forRoot()
+    TimeagoModule.forRoot(),
+    ModalModule.forRoot()
   ],
   exports: [
     BsDropdownModule,
@@ -35,7 +37,8 @@ import { TimeagoModule } from 'ngx-timeago';
     BsDatepickerModule,
     PaginationModule,
     ButtonsModule,
-    TimeagoModule
+    TimeagoModule,
+    ModalModule
   ]
 })
 export class SharedModule { }
