@@ -1,9 +1,7 @@
 using System;
 using System.Threading.Tasks;
 using API.Extensions;
-using API.Helpers;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SignalR;
 
 namespace API.SignalR
@@ -12,7 +10,7 @@ namespace API.SignalR
     public class PresenceHub : Hub
     {
         private readonly PresenceTracker _tracker;
-        public PresenceHub(PresenceTracker tracker) 
+        public PresenceHub(PresenceTracker tracker)
         {
             _tracker = tracker;
         }

@@ -89,7 +89,7 @@ namespace API.Data
         public async Task<IEnumerable<MessageDto>> GetMessageThread(string currentUsername, 
             string recipientUsername)
         {
-            var messages = await _context.Messages                
+            var messages = await _context.Messages
                 .Where(m => m.Recipient.UserName == currentUsername && m.RecipientDeleted == false
                         && m.Sender.UserName == recipientUsername
                         || m.Recipient.UserName == recipientUsername
@@ -108,8 +108,6 @@ namespace API.Data
                 {
                     message.DateRead = DateTime.UtcNow;
                 }
-
-                await _context.SaveChangesAsync();
             }
 
             return messages;

@@ -18,7 +18,7 @@ namespace API.DTOs
 
         [JsonIgnore]
         public bool SenderDeleted { get; set; }
-        
+
         [JsonIgnore]
         public bool RecipientDeleted { get; set; }
     }

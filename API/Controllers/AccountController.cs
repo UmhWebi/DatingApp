@@ -15,16 +15,16 @@ namespace API.Controllers
 {
     public class AccountController : BaseApiController
     {
-        private readonly UserManager<AppUser> _userManager;
         private readonly ITokenService _tokenService;
         private readonly IMapper _mapper;
+        private readonly UserManager<AppUser> _userManager;
         private readonly SignInManager<AppUser> _signInManager;
         public AccountController(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager, ITokenService tokenService, IMapper mapper)
         {
-            _signInManager = signInManager;           
+            _signInManager = signInManager;
+            _userManager = userManager;
             _mapper = mapper;
             _tokenService = tokenService;
-            _userManager = userManager;
         }
 
         [HttpPost("register")]

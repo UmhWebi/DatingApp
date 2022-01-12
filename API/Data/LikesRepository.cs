@@ -6,7 +6,7 @@ using API.Entities;
 using API.Extensions;
 using API.Helpers;
 using API.Interfaces;
-using Microsoft.EntityFrameworkCore; 
+using Microsoft.EntityFrameworkCore;
 
 namespace API.Data
 {
@@ -45,7 +45,7 @@ namespace API.Data
                 Username = user.UserName,
                 KnownAs = user.KnownAs,
                 Age = user.DateOfBirth.CalculateAge(),
-                PhotoUrl = user.Photos.FirstOrDefault(p => p.IsMain).Url, 
+                PhotoUrl = user.Photos.FirstOrDefault(p => p.IsMain).Url,
                 City = user.City,
                 Id = user.Id
             });

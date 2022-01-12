@@ -4,8 +4,9 @@ using System.Threading.Tasks;
 using API.Helpers;
 using Microsoft.AspNetCore.Mvc;
 
-namespace API.SignalR 
+namespace API.SignalR
 {
+    [ServiceFilter(typeof(LogUserActivity))]
     public class PresenceTracker
     {
         private static readonly Dictionary<string, List<string>> OnlineUsers =
